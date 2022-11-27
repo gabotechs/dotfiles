@@ -31,7 +31,9 @@ local lsp = require "lspconfig"
 local coq = require "coq"
 
 lsp.tsserver.setup{}
-lsp.tsserver.setup(coq.lsp_ensure_capabilities{})
+lsp.pyright.setup{}
+lsp.rust_analyzer.setup{}
+lsp.gopls.setup{}
 
 vim.opt.nu = true
 
