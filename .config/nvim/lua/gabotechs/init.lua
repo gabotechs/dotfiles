@@ -30,12 +30,12 @@ end
 local lsp = require "lspconfig"
 local coq = require "coq"
 
-lsp.tsserver.setup{}
-lsp.pyright.setup{}
-lsp.rust_analyzer.setup{}
-lsp.gopls.setup{}
-lsp.luau_lsp.setup{}
-lsp.jsonls.setup{}
+lsp.tsserver.setup(coq.lsp_ensure_capabilities{})
+lsp.pyright.setup(coq.lsp_ensure_capabilities{})
+lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities{})
+lsp.gopls.setup(coq.lsp_ensure_capabilities{})
+lsp.luau_lsp.setup(coq.lsp_ensure_capabilities{})
+lsp.jsonls.setup(coq.lsp_ensure_capabilities{})
 
 vim.opt.nu = true
 
