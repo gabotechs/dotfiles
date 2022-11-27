@@ -12,11 +12,12 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'ms-jpq/coq.nvim'
-  use 'neovim/nvim-lspconfig'
-  use "rafamadriz/neon"
-  use 'preservim/nerdtree'
+  use 'wbthomason/packer.nvim' 
+  use 'ms-jpq/coq.nvim' 
+  use 'neovim/nvim-lspconfig' 
+  use "rafamadriz/neon" 
+  use 'preservim/nerdtree' 
+  use 'mg979/vim-visual-multi' 
 
   if install_plugins then
     require('packer').sync()
@@ -69,6 +70,11 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<cr>')
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>')
 vim.keymap.set('n', '<leader>Q', '<cmd>q!<cr>')
 vim.api.nvim_set_keymap('i', 'kj'        , '<Esc>'               , {noremap = true, silent = false})
+vim.api.nvim_set_keymap('i',  "'"        , "''<left>"            , {noremap = true, silent = false})
+vim.api.nvim_set_keymap('i',  '"'        , '""<left>'            , {noremap = true, silent = false})
+vim.api.nvim_set_keymap('i',  '('        , '()<left>'            , {noremap = true, silent = false})
+vim.api.nvim_set_keymap('i',  '['        , '[]<left>'            , {noremap = true, silent = false})
+vim.api.nvim_set_keymap('i',  '{'        , '{}<left>'            , {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>pv', '<cmd>Ex<CR>'         , {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>n' , ':NERDTreeFocus<CR>'  , {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<C-n>'     , ':NERDTree<CR>'       , {noremap = true, silent = false})
