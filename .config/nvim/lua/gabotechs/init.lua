@@ -34,6 +34,8 @@ lsp.tsserver.setup{}
 lsp.pyright.setup{}
 lsp.rust_analyzer.setup{}
 lsp.gopls.setup{}
+lsp.luau_lsp.setup{}
+lsp.jsonls.setup{}
 
 vim.opt.nu = true
 
