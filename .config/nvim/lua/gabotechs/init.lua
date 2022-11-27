@@ -61,7 +61,9 @@ vim.cmd[[
     COQnow
 ]]
 
-vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>')
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>')
+vim.keymap.set('n', '<leader>Q', '<cmd>q!<cr>')
 vim.api.nvim_set_keymap('i', 'kj'        , '<Esc>'               , {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>pv', '<cmd>Ex<CR>'         , {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>n' , ':NERDTreeFocus<CR>'  , {noremap = true, silent = false})

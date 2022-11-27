@@ -1,0 +1,6 @@
+inoremap kj <Esc>
+xnoremap("<leader>p", "\"_dP")
+
+:set ic
+
+set NERDTree
