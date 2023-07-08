@@ -1,4 +1,4 @@
-inoremap kj <Esc>
+inoremap jk <Esc>
 xnoremap("<leader>p", "\"_dP")
 
 :set ic
