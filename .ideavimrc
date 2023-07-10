@@ -47,12 +47,16 @@ let mapleader = " "
 " nnoremap <leader>vv :e ~/.ideavimrc<CR>
 
 :map <leader>f <Action>(GotoFile)
-:map <leader>w <Action>(Save)
-:map <leader>e <Action>(SelectInProjectView)
-:map <leader>t <Action>(ActivateTerminalToolWindow)
+:map <leader>w <Action>(SaveAll)
+:map <leader>e <Action>(ActivateProjectToolWindow)
+:map <C-h> <Action>(SelectInProjectView)
+:map <leader>tv <Action>(ActivateTerminalToolWindow)
 :map <leader>b <Action>(Switcher)
 :map <leader>/ <Action>(CommentByLineComment)
+:map <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 inoremap jk <Esc>
 
 :set ic
+
+set NERDTree
