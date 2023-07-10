@@ -1,37 +1,58 @@
-set number                        " line numbers
+set number                                " line numbers
 
-set hlsearch                      " highlight search occurrences
-set ignorecase                    " ignore case in search patterns
-set smartcase                     " no ignore case when pattern is uppercase
-set incsearch                     " show search results while typing
-set wrapscan                      " searches wrap around the end of the file
+set hlsearch                              " highlight search occurrences
+set ignorecase                            " ignore case in search patterns
+set smartcase                             " no ignore case when pattern is uppercase
+set incsearch                             " show search results while typing
+set wrapscan                              " searches wrap around the end of the file
 
-set gdefault                      " substitute all occurrences in line per default
-set history=10000                 " keep x lines of command line history
-set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+set gdefault                              " substitute all occurrences in line per default
+set history=10000                         " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10          " keep some lines before and after the cursor visible
 set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
 
+" Easy jump
+Plug 'easymotion/vim-easymotion'
+map <leader>S <Plug>(easymotion-s)
+map <leader>s <Plug>(easymotion-f)
+
 " Multiple cursors
-set multicursor
+Plug 'terryma/vim-multiple-cursors'
+
+set multiple-cursors
 
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
+omap <C-n> <Plug>NextWholeOccurrence
 nmap g<C-n> <Plug>NextOccurrence
 xmap g<C-n> <Plug>NextOccurrence
+omap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text, e.g., ñ
+
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+omap <S-C-n> <Plug>AllWholeOccurrences
+nmap g<S-C-n> <Plug>AllOccurrences
+xmap g<S-C-n> <Plug>AllOccurrences
+omap g<S-C-n> <Plug>AllOccurrences
 
 " set <leader> to <space>
 let mapleader = " "
 
 " edit ideavim config
-nnoremap <leader>vv :e ~/.ideavimrc<CR>
-nnoremap <leader>vr :source ~/.ideavimrc<CR>
+" nnoremap <leader>vv :e ~/.ideavimrc<CR>
 
-nmap <leader>f :action GotoFile<CR>
-nmap <leader>w :action Save<CR>
+:map <leader>f <Action>(GotoFile)
+:map <leader>w <Action>(Save)
+:map <leader>e <Action>(SelectInProjectView)
+:map <leader>t <Action>(ActivateTerminalToolWindow)
+:map <leader>b <Action>(Switcher)
+:map <leader>/ <Action>(CommentByLineComment)
 
 inoremap jk <Esc>
 
 :set ic
-
-set NERDTree
-set clipboard+=unnamed
