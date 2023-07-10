@@ -5,10 +5,19 @@
 
 
 lvim.keys.insert_mode["jk"] = "<Esc>"
-lvim.builtin.terminal.open_mapping = "<leader>t"
+-- lvim.keys.normal_mode["<C-d>"] = "<C-d>zz" -- This centers the cursor while paging down
+-- lvim.builtin.terminal.open_mapping = "<leader>t"
 lvim.builtin.terminal.direction = "vertical"
 lvim.builtin.terminal.size = 60
 lvim.format_on_save = true
+
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
+  v = { "<cmd>2ToggleTerm size=80 direction=vertical<cr>", "Split vertical" },
+  h = { "<cmd>2ToggleTerm size=30 direction=horizontal<cr>", "Split horizontal" },
+}
 
 lvim.builtin.treesitter.ensure_installed = {
   "lua",
