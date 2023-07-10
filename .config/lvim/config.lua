@@ -5,8 +5,6 @@
 
 
 lvim.keys.insert_mode["jk"] = "<Esc>"
--- lvim.keys.normal_mode["<C-d>"] = "<C-d>zz" -- This centers the cursor while paging down
--- lvim.builtin.terminal.open_mapping = "<leader>t"
 lvim.builtin.terminal.direction = "vertical"
 lvim.builtin.terminal.size = 60
 lvim.format_on_save = true
@@ -161,6 +159,12 @@ lvim.plugins = {
           border = "rounded",
         },
       }
+    end,
+  },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
     end,
   }
 }
