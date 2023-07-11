@@ -5,7 +5,7 @@
 
 
 lvim.keys.insert_mode["jk"] = "<Esc>"
-lvim.builtin.terminal.direction = "vertical"
+-- lvim.builtin.terminal.direction = "vertical"
 lvim.builtin.terminal.size = 60
 lvim.format_on_save = true
 
