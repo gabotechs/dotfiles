@@ -54,6 +54,8 @@ let mapleader = " "
 :map <leader>b <Action>(Switcher)
 :map <leader>/ <Action>(CommentByLineComment)
 :map <leader>gr <Action>(Vcs.RollbackChangedLines)
+:map gl <Action>(ShowErrorDescription)
+:map <leader>x <Action>(CloseContent)
 
 inoremap jk <Esc>
 
