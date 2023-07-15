@@ -5,10 +5,12 @@
 
 
 lvim.keys.insert_mode["jk"] = "<Esc>"
--- lvim.builtin.terminal.direction = "vertical"
 lvim.builtin.terminal.size = 60
 lvim.format_on_save = true
 
+-- For multi cursor editting
+-- vim.cmd("let g:VM_maps[\"Add Cursor Down\"]   = '<C-j>'")
+-- vim.cmd("let g:VM_maps[\"Add Cursor Up\"]     = '<C-k>'")
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Terminal",
