@@ -56,8 +56,12 @@ let mapleader = " "
 :map <leader>gr <Action>(Vcs.RollbackChangedLines)
 :map gl <Action>(ShowErrorDescription)
 :map <leader>c <Action>(CloseContent)
+:map <leader>gc <Action>(Git.CompareWithBranch)
 
 inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap Jk <Esc>
+inoremap Kj <Esc>
 
 :set ic
 
