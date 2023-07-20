@@ -25,6 +25,7 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "rust",
+  "python",
   "toml",
 }
 
@@ -32,8 +33,15 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyz
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "stylua", filetypes = { "lua" } },
-  { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
+  { command = "stylua",   filetypes = { "lua" } },
+  { command = "prettier", filetypes = { "typescript", "typescriptreact" } },
+  { name = "black" }
+}
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "flake8", filetypes = { "python" } },
+  { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
 
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
