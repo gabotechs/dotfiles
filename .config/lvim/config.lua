@@ -5,6 +5,9 @@
 
 
 lvim.keys.insert_mode["jk"] = "<Esc>"
+lvim.keys.insert_mode["kj"] = "<Esc>"
+lvim.keys.insert_mode["Jk"] = "<Esc>"
+lvim.keys.insert_mode["Kj"] = "<Esc>"
 lvim.builtin.terminal.size = 60
 lvim.format_on_save = true
 
