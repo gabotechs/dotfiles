@@ -9,7 +9,7 @@ lvim.keys.insert_mode["kj"] = "<Esc>"
 lvim.keys.insert_mode["Jk"] = "<Esc>"
 lvim.keys.insert_mode["Kj"] = "<Esc>"
 lvim.builtin.terminal.size = 60
-lvim.format_on_save = true
+-- lvim.format_on_save = true
 
 -- For multi cursor editting
 -- vim.cmd("let g:VM_maps[\"Add Cursor Down\"]   = '<C-j>'")
@@ -34,7 +34,7 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyz
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua",   filetypes = { "lua" } },
-  { command = "prettier", filetypes = { "typescript", "typescriptreact" } },
+ -- { command = "prettier", filetypes = { "typescript", "typescriptreact" } },
   { name = "black" }
 }
 
