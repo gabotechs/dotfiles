@@ -57,6 +57,7 @@ let mapleader = " "
 :map gl <Action>(ShowErrorDescription)
 :map <leader>c <Action>(CloseContent)
 :map <leader>gc <Action>(Git.CompareWithBranch)
+:map <leader>lf <Action>(ReformatCode)
 
 inoremap jk <Esc>
 inoremap kj <Esc>
