@@ -46,16 +46,17 @@ let mapleader = " "
 " edit ideavim config
 " nnoremap <leader>vv :e ~/.ideavimrc<CR>
 
-:map <leader>f <Action>(GotoFile)
-:map <leader>w <Action>(SaveAll)
-:map <leader>e <Action>(ActivateProjectToolWindow)
-:map <C-h> <Action>(SelectInProjectView)
+:map <leader>f  <Action>(GotoFile)
+:map <leader>w  <Action>(SaveAll)
+:map <leader>e  <Action>(ActivateProjectToolWindow)
+:map <C-h>      <Action>(SelectInProjectView)
 :map <leader>tv <Action>(ActivateTerminalToolWindow)
-:map <leader>b <Action>(Switcher)
-:map <leader>/ <Action>(CommentByLineComment)
+:map <C-l>      <Action>(ActivateTerminalToolWindow)
+:map <leader>b  <Action>(Switcher)
+:map <leader>/  <Action>(CommentByLineComment)
 :map <leader>gr <Action>(Vcs.RollbackChangedLines)
-:map gl <Action>(ShowErrorDescription)
-:map <leader>c <Action>(CloseContent)
+:map gl         <Action>(ShowErrorDescription)
+:map <leader>c  <Action>(CloseContent)
 :map <leader>gc <Action>(Git.CompareWithBranch)
 :map <leader>lf <Action>(ReformatCode)
 
