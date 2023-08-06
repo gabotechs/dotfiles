@@ -37,12 +37,14 @@ formatters.setup {
   { command = "stylua",   filetypes = { "lua" } },
   -- { command = "prettier", filetypes = { "typescript", "typescriptreact" } },
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
+  { command = "gofmt", filetypes = {"go"} },
   { name = "black" }
 }
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "flake8", filetypes = { "python" } },
+  { command = "golangci_lint", filetypes = { "go" } },
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
 
