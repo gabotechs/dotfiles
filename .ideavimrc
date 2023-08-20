@@ -57,7 +57,9 @@ let mapleader = " "
 :map <leader>gr <Action>(Vcs.RollbackChangedLines)
 :map gl         <Action>(ShowErrorDescription)
 :map <leader>c  <Action>(CloseContent)
+:map <leader>C  <Action>(CloseAllEditors)
 :map <leader>gc <Action>(Git.CompareWithBranch)
+:map <leader>gg <Action>(Git.Branches)
 :map <leader>lf <Action>(ReformatCode)
 
 inoremap jk <Esc>
