@@ -22,11 +22,7 @@ Plug 'terryma/vim-multiple-cursors'
 set multiple-cursors
 
 nmap <C-n> <Plug>NextWholeOccurrence
-xmap <C-n> <Plug>NextWholeOccurrence
-omap <C-n> <Plug>NextWholeOccurrence
 nmap g<C-n> <Plug>NextOccurrence
-xmap g<C-n> <Plug>NextOccurrence
-omap g<C-n> <Plug>NextOccurrence
 xmap <C-x> <Plug>SkipOccurrence
 xmap <C-p> <Plug>RemoveOccurrence
 
@@ -34,10 +30,6 @@ xmap <C-p> <Plug>RemoveOccurrence
 " <A-n> is used to enter accented text, e.g., ñ
 
 nmap <S-C-n> <Plug>AllWholeOccurrences
-xmap <S-C-n> <Plug>AllWholeOccurrences
-omap <S-C-n> <Plug>AllWholeOccurrences
-nmap g<S-C-n> <Plug>AllOccurrences
-xmap g<S-C-n> <Plug>AllOccurrences
 omap g<S-C-n> <Plug>AllOccurrences
 
 " set <leader> to <space>
@@ -45,7 +37,8 @@ let mapleader = " "
 
 " edit ideavim config
 " nnoremap <leader>vv :e ~/.ideavimrc<CR>
-
+"
+:map <leader>s  <C-w>w
 :map <leader>f  <Action>(GotoFile)
 :map <leader>w  <Action>(SaveAll)
 :map <leader>e  <Action>(ActivateProjectToolWindow)
@@ -62,7 +55,7 @@ let mapleader = " "
 :map <leader>gg <Action>(Git.Branches)
 :map <leader>lf <Action>(ReformatCode)
 :map <leader>li <Action>(OptimizeImports)
-:map <leader>r <Action>(ChooseRunConfiguration)
+:map <leader>r  <Action>(ChooseRunConfiguration)
 
 
 inoremap jk <Esc>
