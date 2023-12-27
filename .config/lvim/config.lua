@@ -27,7 +27,9 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "python",
   "toml",
-  "terraform"
+  "terraform",
+  "yaml",
+  "ruby"
 }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
@@ -36,17 +38,19 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyz
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua",   filetypes = { "lua" } },
-  -- { command = "prettier", filetypes = { "typescript", "typescriptreact" } },
-  { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
+  { command = "prettier", filetypes = { "typescript", "typescriptreact" } },
+  -- { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
   { command = "gofmt", filetypes = {"go"} },
-  { name = "black" }
+  { name = "black", filetypes = {"python"} },
+  { name = "rubocop", filetypes = {"ruby"} }
 }
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "flake8", filetypes = { "python" } },
   { command = "golangci_lint", filetypes = { "go" } },
-  { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+  { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
+  { name = "rubocop", filetypes = {"ruby"} }
 }
 
 
