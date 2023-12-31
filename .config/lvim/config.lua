@@ -11,9 +11,11 @@ lvim.keys.insert_mode["Kj"] = "<Esc>"
 lvim.builtin.terminal.size = 60
 -- lvim.format_on_save = true
 
--- For multi cursor editting
+-- For multi cursor editing
 -- vim.cmd("let g:VM_maps[\"Add Cursor Down\"]   = '<C-j>'")
 -- vim.cmd("let g:VM_maps[\"Add Cursor Up\"]     = '<C-k>'")
+
+vim.cmd("set spell")
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Terminal",
@@ -52,7 +54,6 @@ linters.setup {
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
   { name = "rubocop", filetypes = {"ruby"} }
 }
-
 
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 
