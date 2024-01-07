@@ -64,6 +64,12 @@ let mapleader = " "
 :map <leader>lf <Action>(ReformatCode)
 :map <leader>li <Action>(OptimizeImports)
 :map <leader>r  <Action>(ChooseRunConfiguration)
+:map <leader>lr <Action>(RenameElement)
+:map <leader>la <Action>(ShowIntentionActions)
+:map <leader>dt <Action>(ToggleLineBreakpoint)
+:map <leader>do <Action>(StepOver)
+:map <leader>di <Action>(StepInto)
+:map <leader>dc <Action>(Resume)
 
 
 inoremap jk <Esc>
