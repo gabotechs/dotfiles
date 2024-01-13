@@ -20,7 +20,7 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -118,8 +118,9 @@ source $ZSH/oh-my-zsh.sh
 # export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 # export VI_MODE_SET_CURSOR=true
 export VISUAL=lvim
-bindkey -M viins 'jk' vi-cmd-mode
-bindkey -M visual 'v' undefined-key
+export EDITOR=lvim
+# bindkey -M viins 'jk' vi-cmd-mode
+# bindkey -M visual 'v' undefined-key
 
 alias vim="lvim"
 alias lg="lazygit"
@@ -144,34 +145,31 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$GOROOT/bin:$PATH
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # source $(brew --prefix nvm)/nvm.sh
 export ZVM_VI_ESCAPE_BINDKEY=jk
 export ZVM_VI_HIGHLIGHT_FOREGROUND=white             # Color name
 export ZVM_VI_HIGHLIGHT_BACKGROUND=blue               # Color name
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+if [ ! -d $ZSH/custom/plugins/zsh-vi-mode ]; then
+  git clone --depth=1 https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
+fi
+source $ZSH/custom/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-eval "$(zoxide init zsh)"
-
-
-if [ ! -d ${ZSH}/custom/themes/powerlevel10k ]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH}/custom/themes/powerlevel10k
+if [ ! -d $ZSH/custom/themes/powerlevel10k ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k
 fi
 source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
+
+eval "$(zoxide init zsh)"
 
 # NOTE: Wrap this source inside the `function zvm_after_init() {}` because otherwise CTRL-r is not associated to fzf
 function zvm_after_init() {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 }
 
-# NOTE: Workarround for the weird copy-pasting stuff based on https://github.com/jeffreytse/zsh-vi-mode/issues/19
+# NOTE: Workaround for the weird copy-pasting stuff based on https://github.com/jeffreytse/zsh-vi-mode/issues/19
 my_zvm_vi_yank() {
   zvm_vi_yank
   echo -en "${CUTBUFFER}" | cbread
