@@ -158,8 +158,13 @@ export ZVM_VI_HIGHLIGHT_BACKGROUND=blue               # Color name
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 eval "$(zoxide init zsh)"
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
-[ -f ~/powerlevel10k/powerlevel10k.zsh-theme ] && source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+
+if [ ! -d ${ZSH}/custom/themes/powerlevel10k ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH}/custom/themes/powerlevel10k
+fi
+source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.p10k.zsh
 
 # NOTE: Wrap this source inside the `function zvm_after_init() {}` because otherwise CTRL-r is not associated to fzf
 function zvm_after_init() {
