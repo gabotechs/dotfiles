@@ -6,8 +6,8 @@ if [ ! -d $ZSH ]; then
   echo "oh-my-zsh is not installed. Installing it..."
   sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
 fi
-source $ZSH/oh-my-zsh.sh
 plugins=(git aws)
+source $ZSH/oh-my-zsh.sh
 
 
 # ================================
