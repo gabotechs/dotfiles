@@ -106,18 +106,46 @@ my_zvm_vi_put_before() {
   zvm_highlight clear # NOTE: zvm_vi_put_before introduces weird highlighting for me
 }
 
+# NOTE(gmusat): this is introduced by me, based on the original zvm_vi_change_eol.
+#  It does the same thing but without changing mode.
+function zvm_vi_delete_eol() {
+  local bpos=$CURSOR epos=$CURSOR
+
+  # Find the end of current line
+  for ((; $epos<$#BUFFER; epos++)); do
+    if [[ "${BUFFER:$epos:1}" == $'\n' ]]; then
+      break
+    fi
+  done
+
+  CUTBUFFER=${BUFFER:$bpos:$((epos-bpos))}
+  BUFFER="${BUFFER:0:$bpos}${BUFFER:$epos}"
+
+  zvm_reset_repeat_commands $ZVM_MODE c 0 $#CUTBUFFER
+  # zvm_select_vi_mode $ZVM_MODE_INSERT
+}
+
+my_zvm_vi_delete_eol() {
+  zvm_vi_delete_eol
+  echo -en "${CUTBUFFER}" | cbread
+}
+
 zvm_after_lazy_keybindings() {
   zvm_define_widget my_zvm_vi_yank
   zvm_define_widget my_zvm_vi_delete
+  zvm_define_widget my_zvm_vi_delete_after
   zvm_define_widget my_zvm_vi_change
   zvm_define_widget my_zvm_vi_change_eol
   zvm_define_widget my_zvm_vi_put_after
   zvm_define_widget my_zvm_vi_put_before
+  zvm_define_widget my_zvm_vi_delete_eol
 
   zvm_bindkey visual 'v' undefined-key
   zvm_bindkey visual 'y' my_zvm_vi_yank
   zvm_bindkey visual 'd' my_zvm_vi_delete
+  zvm_bindkey vicmd  'D' my_zvm_vi_delete_eol
   zvm_bindkey visual 'x' my_zvm_vi_delete
+  zvm_bindkey vicmd  'x' my_zvm_vi_delete
   zvm_bindkey vicmd  'C' my_zvm_vi_change_eol
   zvm_bindkey visual 'c' my_zvm_vi_change
   zvm_bindkey vicmd  'p' my_zvm_vi_put_after
