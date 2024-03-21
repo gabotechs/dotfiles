@@ -94,6 +94,16 @@ my_zvm_vi_change_eol() {
   echo -en "${CUTBUFFER}" | cbread
 }
 
+my_zvm_vi_substitute() {
+  zvm_vi_substitute
+  echo -en "${CUTBUFFER}" | cbread
+}
+
+my_zvm_vi_substitute_whole_line() {
+  zvm_vi_substitute_whole_line
+  echo -en "${CUTBUFFER}" | cbread
+}
+
 my_zvm_vi_put_after() {
   CUTBUFFER=$(cbprint)
   zvm_vi_put_after
@@ -104,6 +114,12 @@ my_zvm_vi_put_before() {
   CUTBUFFER=$(cbprint)
   zvm_vi_put_before
   zvm_highlight clear # NOTE: zvm_vi_put_before introduces weird highlighting for me
+}
+
+my_zvm_vi_replace_selection() {
+    CUTBUFFER=$(pbpaste)
+    zvm_vi_replace_selection
+    echo -en "${CUTBUFFER}" | cbread
 }
 
 # NOTE(gmusat): this is introduced by me, based on the original zvm_vi_change_eol.
@@ -139,16 +155,22 @@ zvm_after_lazy_keybindings() {
   zvm_define_widget my_zvm_vi_put_after
   zvm_define_widget my_zvm_vi_put_before
   zvm_define_widget my_zvm_vi_delete_eol
+  zvm_define_widget my_zvm_vi_substitute
+  zvm_define_widget my_zvm_vi_substitute_whole_line
+  zvm_define_widget my_zvm_vi_replace_selection
 
+  zvm_bindkey vicmd 'C' my_zvm_vi_change_eol
+  zvm_bindkey vicmd 'P' my_zvm_vi_put_before
+  zvm_bindkey vicmd 'D' my_zvm_vi_delete_eol
+  zvm_bindkey vicmd 'S' my_zvm_vi_substitute_whole_line
+  zvm_bindkey vicmd 'p' my_zvm_vi_put_after
+
+  zvm_bindkey visual 'p' my_zvm_vi_replace_selection
   zvm_bindkey visual 'v' undefined-key
   zvm_bindkey visual 'y' my_zvm_vi_yank
   zvm_bindkey visual 'd' my_zvm_vi_delete
-  zvm_bindkey vicmd  'D' my_zvm_vi_delete_eol
   zvm_bindkey visual 'x' my_zvm_vi_delete
-  zvm_bindkey vicmd  'C' my_zvm_vi_change_eol
   zvm_bindkey visual 'c' my_zvm_vi_change
-  zvm_bindkey vicmd  'p' my_zvm_vi_put_after
-  zvm_bindkey vicmd  'P' my_zvm_vi_put_before
 }
 
 if [[ $(uname) = "Darwin" ]]; then
