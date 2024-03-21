@@ -141,6 +141,15 @@ function zvm_vi_delete_eol() {
   # zvm_select_vi_mode $ZVM_MODE_INSERT
 }
 
+# NOTE(gmusat): This is made completely by me, not based
+# on anything specially.
+function my_zvm_delete_char() {
+  CUTBUFFER=${BUFFER:$CURSOR:1}
+
+  BUFFER="${BUFFER:0:$CURSOR}${cutbuf}${BUFFER:$CURSOR+1}"
+  echo -en "${CUTBUFFER}" | cbread
+}
+
 my_zvm_vi_delete_eol() {
   zvm_vi_delete_eol
   echo -en "${CUTBUFFER}" | cbread
@@ -158,12 +167,14 @@ zvm_after_lazy_keybindings() {
   zvm_define_widget my_zvm_vi_substitute
   zvm_define_widget my_zvm_vi_substitute_whole_line
   zvm_define_widget my_zvm_vi_replace_selection
+  zvm_define_widget my_zvm_delete_char
 
   zvm_bindkey vicmd 'C' my_zvm_vi_change_eol
   zvm_bindkey vicmd 'P' my_zvm_vi_put_before
   zvm_bindkey vicmd 'D' my_zvm_vi_delete_eol
   zvm_bindkey vicmd 'S' my_zvm_vi_substitute_whole_line
   zvm_bindkey vicmd 'p' my_zvm_vi_put_after
+  zvm_bindkey vicmd 'x' my_zvm_delete_char
 
   zvm_bindkey visual 'p' my_zvm_vi_replace_selection
   zvm_bindkey visual 'v' undefined-key
