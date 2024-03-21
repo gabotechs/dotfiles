@@ -15,7 +15,7 @@ lvim.builtin.terminal.size = 60
 -- vim.cmd("let g:VM_maps[\"Add Cursor Down\"]   = '<C-j>'")
 -- vim.cmd("let g:VM_maps[\"Add Cursor Up\"]     = '<C-k>'")
 
-vim.cmd("set spell")
+-- vim.cmd("set spell")
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Terminal",
@@ -31,7 +31,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "toml",
   "terraform",
   "yaml",
-  "ruby"
+  "ruby",
+  "swift"
 }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
@@ -44,7 +45,8 @@ formatters.setup {
   -- { command = "eslint", filetypes = { "typescript", "typescriptreact" } },
   { command = "gofmt", filetypes = {"go"} },
   { name = "black", filetypes = {"python"} },
-  { name = "rubocop", filetypes = {"ruby"} }
+  { name = "rubocop", filetypes = {"ruby"} },
+  { name = "swiftformat", filetypes = {"swift"} }
 }
 
 local linters = require "lvim.lsp.null-ls.linters"
