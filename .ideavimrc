@@ -70,6 +70,8 @@ let mapleader = " "
 :map <leader>do <Action>(StepOver)
 :map <leader>di <Action>(StepInto)
 :map <leader>dc <Action>(Resume)
+:map <leader>st <Action>(FindInPath)
+
 
 
 inoremap jk <Esc>
