@@ -779,11 +779,11 @@ key_bindings:
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
   # Vi Mode
-  - { key: Space, mods: Control|Shift, action: ToggleViMode }
+  - { key: Space, mods: Control, action: ToggleViMode }
   # - { key: Space,  mods: Control, mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: Escape,                      mode: Vi|~Search, action: ClearSelection          }
   #- { key: I,                           mode: Vi|~Search, action: ToggleViMode            }
-  - { key: I, mods: Shift, mode: Vi|~Search, mode: Vi|~Search, action: First }
+  - { key: I, mods: Shift, mode: Vi|~Search, action: First }
   - { key: A, mods: Shift, mode: Vi|~Search, action: Last }
   #- { key: C,      mods: Control,       mode: Vi|~Search, action: ToggleViMode            }
   #- { key: Y,      mods: Control,       mode: Vi|~Search, action: ScrollLineUp            }
