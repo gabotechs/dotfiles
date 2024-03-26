@@ -1,0 +1,30 @@
+live_config_reload = true
+
+[cursor]
+vi_mode_style = "Block"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Space"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "First"
+key = "I"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Last"
+key = "A"
+mode = "Vi|~Search"
+mods = "Shift"
