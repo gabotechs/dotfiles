@@ -11,7 +11,7 @@ family = "JetBrainsMono Nerd Font"
 
 [keyboard]
 bindings = [
-  { key = "Space", mods = "Shift",                      action = "ToggleViMode" },
+  { key = "Space", mods = "Command|Shift",              action = "ToggleViMode" },
   { key = "I",     mods = "Shift", mode = "Vi|~Search", action = "First" },
   { key = "A",     mods = "Shift", mode = "Vi|~Search", action = "Last" }
 ]
