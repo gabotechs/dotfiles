@@ -37,7 +37,6 @@ lvim.builtin.treesitter.ensure_installed = {
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua",   filetypes = { "lua" } },
@@ -57,6 +56,7 @@ linters.setup {
   { name = "rubocop", filetypes = {"ruby"} }
 }
 
+-- Taken from https://github.com/LunarVim/starter.lvim/blob/b0b041265d4c1f5f9213b742bd9e00be763a2a6e/config.lua
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 
 local codelldb_path = mason_path .. "bin/codelldb"
