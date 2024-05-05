@@ -40,6 +40,7 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$GOROOT/bin:$PATH
 
+if [ -f .zshrc-custom ]; then source .zshrc-custom; fi
 
 # =============================
 # === powerlevel 10k config ===
@@ -194,7 +195,7 @@ cbread() {
   if [[ $on_mac_os -eq 0 ]]; then
     pbcopy
   else
-    xclip -selection primary -i -f | xclip -selection secondary -i -f | xclip -selection clipboard -i
+    xclip -selection primary -i -f 2> /dev/null | xclip -selection secondary -i -f 2> /dev/null | xclip -selection clipboard -i 2> /dev/null
   fi
 }
 
