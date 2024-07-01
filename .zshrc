@@ -40,7 +40,8 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$GOROOT/bin:$PATH
 
-if [ -f .zshrc-custom ]; then source .zshrc-custom; fi
+export CUSTOM_ZSHRC="$HOME/.zshrc-custom"
+if [ -f $CUSTOM_ZSHRC ]; then source $CUSTOM_ZSHRC; fi
 
 # =============================
 # === powerlevel 10k config ===
