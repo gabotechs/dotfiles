@@ -71,6 +71,7 @@ let mapleader = " "
 :map <leader>di <Action>(StepInto)
 :map <leader>dc <Action>(Resume)
 :map <leader>st <Action>(FindInPath)
+:map <leader>v  <Action>(RecentLocations)
 
 
 
