@@ -14,10 +14,10 @@ source $ZSH/oh-my-zsh.sh
 # === Export paths and aliases ===
 # ================================
 
-export VISUAL=lvim
-export EDITOR=lvim
+export VISUAL=nvim
+export EDITOR=nvim
 
-alias vim="lvim"
+alias vim="nvim"
 alias lg="lazygit"
 alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias lconfig="lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME"
