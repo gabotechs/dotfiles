@@ -61,6 +61,7 @@ let mapleader = " "
 :map <leader>C  <Action>(CloseAllEditors)
 :map <leader>gc <Action>(Git.CompareWithBranch)
 :map <leader>gg <Action>(Git.Branches)
+:map <leader>go <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction)
 :map <leader>lf <Action>(ReformatCode)
 :map <leader>li <Action>(OptimizeImports)
 :map <leader>r  <Action>(ChooseRunConfiguration)
