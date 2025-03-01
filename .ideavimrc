@@ -73,6 +73,8 @@ let mapleader = " "
 :map <leader>dc <Action>(Resume)
 :map <leader>st <Action>(FindInPath)
 :map <leader>v  <Action>(RecentLocations)
+:map <leader>ne <Action>(GotoNextError)
+:map <leader>pe <Action>(GotoPreviousError)
 
 
 
