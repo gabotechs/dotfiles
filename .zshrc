@@ -53,7 +53,15 @@ fi
 source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
 
+# ==============================
+# === shell navigation tools ===
+# ==============================
+
 eval "$(zoxide init zsh)"
+
+if command -v exa &> /dev/null; then
+  alias ls=exa
+fi
 
 
 # =============================
