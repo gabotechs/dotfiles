@@ -75,7 +75,8 @@ let mapleader = " "
 :map <leader>v  <Action>(RecentLocations)
 :map <leader>ne <Action>(GotoNextError)
 :map <leader>pe <Action>(GotoPreviousError)
-
+:map <leader>ng <Action>(VcsShowNextChangeMarker)
+:map <leader>pg <Action>(VcsShowPrevChangeMarker)
 
 
 inoremap jk <Esc>
