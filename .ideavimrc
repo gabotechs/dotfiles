@@ -77,6 +77,7 @@ let mapleader = " "
 :map <leader>pe <Action>(GotoPreviousError)
 :map <leader>ng <Action>(VcsShowNextChangeMarker)
 :map <leader>pg <Action>(VcsShowPrevChangeMarker)
+:map <leader>rc <Action>(Code.Review.Editor.New.Comment)
 
 
 inoremap jk <Esc>
