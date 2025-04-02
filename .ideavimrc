@@ -62,6 +62,7 @@ let mapleader = " "
 :map <leader>gc <Action>(Git.CompareWithBranch)
 :map <leader>gg <Action>(Git.Branches)
 :map <leader>go <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction)
+:map <leader>gh <Action>(Vcs.ShowHistoryForBLock)
 :map <leader>lf <Action>(ReformatCode)
 :map <leader>li <Action>(OptimizeImports)
 :map <leader>r  <Action>(ChooseRunConfiguration)
@@ -75,9 +76,9 @@ let mapleader = " "
 :map <leader>v  <Action>(RecentLocations)
 :map <leader>ne <Action>(GotoNextError)
 :map <leader>pe <Action>(GotoPreviousError)
-:map <leader>ng <Action>(VcsShowNextChangeMarker)
-:map <leader>pg <Action>(VcsShowPrevChangeMarker)
-:map <leader>rc <Action>(Code.Review.Editor.New.Comment)
+:map <leader>ng <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)
+:map <leader>pg <Action>(VcsShowPrevChangeMarker)<Action>(PreviousDiff)
+:map <leader>re <Action>(EditSource)
 
 
 inoremap jk <Esc>
