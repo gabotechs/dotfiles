@@ -78,7 +78,8 @@ let mapleader = " "
 :map <leader>pe <Action>(GotoPreviousError)
 :map <leader>ng <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)
 :map <leader>pg <Action>(VcsShowPrevChangeMarker)<Action>(PreviousDiff)
-:map <leader>re <Action>(EditSource)
+:map <C-j>      <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)
+:map <C-k>      <Action>(VcsShowPrevChangeMarker)<Action>(PreviousDiff)
 
 
 inoremap jk <Esc>
