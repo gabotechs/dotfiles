@@ -15,5 +15,3 @@ bindings = [
   { key = "A",     mods = "Shift", mode = "Vi|~Search", action = "Last" }
 ]
 
-[general]
-live_config_reload = true
