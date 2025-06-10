@@ -1,0 +1,340 @@
+{
+    // Prevent VS Code from watching these paths for changes to improve performance
+    "files.watcherExclude": {
+        "bazel-*/": true,
+    },
+    // in cursor, don't bother indexing the git graph. It's quite large and slows things down
+    "cursor.general.gitGraphIndexing": "disabled",
+    "bazel.enableCodeLens": true,
+    "bazel.buildifierExecutable": "@//tools/format:buildifier",
+    "bazel.buildifierFixOnFormat": true,
+    // Datadog settings
+    "datadog.telemetry.setup.suppressMigrationNotification": true,
+    "datadog.telemetry.setup.enableTelemetry": "enabled",
+    // Golang settings
+    "go.enableCodeLens": {
+        "runtest": true
+    },
+    "gopls": {
+        "ui.semanticTokens": true,
+    },
+    "go.toolsEnvVars": {
+        "BUILD_WORKSPACE_DIRECTORY": "${workspaceRoot}",
+    },
+    "go.addTags": {
+        "tags": "json",
+        "options": "json=omitempty",
+        "promptForTags": false,
+        "transform": "snakecase"
+    },
+    // Editor settings
+    "editor.formatOnSave": true,
+    "editor.cursorSurroundingLines": 5,
+    "editor.codeLens": true,
+    // Explorer settings
+    "explorer.autoReveal": false,
+    "workbench.editor.showTabs": "none",
+    // Code Runner extension settings for play button
+    "code-runner.showRunIconInEditorTitleMenu": true,
+    "code-runner.showRunCommandInEditorContextMenu": true,
+    "code-runner.showRunCommandInExplorerContextMenu": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.preserveFocus": true,
+    "code-runner.clearPreviousOutput": false,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.cwd": "${workspaceFolder}",
+    "code-runner.saveAllFilesBeforeRun": true,
+    // terminal settings
+    "terminal.external.osxExec": "alacritty",
+    "terminal.integrated.automationProfile.osx": {},
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.tabs.enabled": false,
+    // Vim settings
+    "vim.leader": "<space>",
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.incsearch": true,
+    "vim.wrapscan": true,
+    "vim.gdefault": true,
+    "vim.history": 10000,
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+        "<C-n>": true,
+        "<C-p>": true,
+        "<C-x>": true
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.saveAll"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.files.action.showActiveFileInExplorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.quickOpenPreviousEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "C"
+            ],
+            "commands": [
+                "workbench.action.closeAllEditors"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "f"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "i"
+            ],
+            "commands": [
+                "editor.action.organizeImports"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "a"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "e"
+            ],
+            "after": [
+                "workbench.action.problems.focus"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "p",
+                "e"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "r"
+            ],
+            "commands": [
+                "git.revertSelectedRanges"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.editor.nextChange"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "workbench.action.editor.previousChange"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "l"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r"
+            ],
+            "commands": [
+                "workbench.action.terminal.newInActiveWorkspace",
+                "code-runner.run"
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "k",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "J",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "K",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        }
+    ],
+    // Spell checker settings
+    "cSpell.allowCompoundWords": true,
+    "cSpell.userWords": [
+        "bazel",
+        "buildifier",
+        "Darcula",
+        "gazelle",
+        "gofmt",
+        "goimports",
+        "golangci",
+        "gopls",
+        "libdatafusion",
+        "prepareevpqueryapi"
+    ],
+    // Theme settings
+    "workbench.colorTheme": "Darcula",
+    "workbench.iconTheme": "a-file-icon-vscode",
+    "cSpell.mergeCSpellSettings": false,
+}
