@@ -13,6 +13,12 @@ source $ZSH/oh-my-zsh.sh
 # ================================
 # === Export paths and aliases ===
 # ================================
+add_to_path() {
+  case ":$PATH:" in
+    *":$1:"*) ;;
+    *) PATH="$1:$PATH" ;;
+  esac
+}
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -27,31 +33,25 @@ export GOROOT=/opt/homebrew/opt/go/libexec
 
 export PNPM_HOME=$HOME/Library/pnpm
 
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=$HOME/github/flutter/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.pub-cache/bin:$PATH
-export PATH=$GOPATH/bin:$PATH
-export PATH=$GOROOT/bin:$PATH
+add_to_path "$PNPM_HOME"
+add_to_path "/opt/homebrew/bin"
+add_to_path "$HOME/github/flutter/bin"
+add_to_path "$HOME/bin"
+add_to_path "$HOME/.local/bin"
+add_to_path "$HOME/.pub-cache/bin"
+add_to_path "$GOPATH/bin"
+add_to_path "$GOROOT/bin"
 
 export CUSTOM_ZSHRC="$HOME/.zshrc-custom"
-if [ -f $CUSTOM_ZSHRC ]; then source $CUSTOM_ZSHRC; fi
+[ -f $CUSTOM_ZSHRC ] && source $CUSTOM_ZSHRC
 
 # =============================
-# === powerlevel 10k config ===
+# === theme config ===
 # =============================
 
-if [ ! -d $ZSH/custom/themes/powerlevel10k ]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k
-fi
-source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.p10k.zsh
+ZSH_THEME=""
+PROMPT='%{$fg[blue]%}%~%{$reset_color%} %{$fg[green]%}%#%{$reset_color%} '
+
 
 # ==============================
 # === shell navigation tools ===
