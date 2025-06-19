@@ -27,14 +27,20 @@
         "promptForTags": false,
         "transform": "snakecase"
     },
+    // Python settings
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.enablePytestSupport": true,
     // Editor settings
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.cursorSurroundingLines": 5,
     "editor.codeLens": true,
+    "files.autoSave": "onFocusChange",
     // Explorer settings
     "explorer.autoReveal": false,
     "workbench.editor.showTabs": "none",
     // Code Runner extension settings for play button
+    "code-runner.enableAppInsights": true,
     "code-runner.showRunIconInEditorTitleMenu": true,
     "code-runner.showRunCommandInEditorContextMenu": true,
     "code-runner.showRunCommandInExplorerContextMenu": true,
@@ -228,6 +234,16 @@
         },
         {
             "before": [
+                "<leader>",
+                "g",
+                "g"
+            ],
+            "commands": [
+                "git.checkout"
+            ]
+        },
+        {
+            "before": [
                 "<C-j>"
             ],
             "commands": [
@@ -325,6 +341,7 @@
         "bazel",
         "buildifier",
         "Darcula",
+        "Dedupe",
         "gazelle",
         "gofmt",
         "goimports",
@@ -333,8 +350,19 @@
         "libdatafusion",
         "prepareevpqueryapi"
     ],
+    // GitLens settings - disable inline annotations by default
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.enabled": false,
     // Theme settings
     "workbench.colorTheme": "Darcula",
     "workbench.iconTheme": "a-file-icon-vscode",
     "cSpell.mergeCSpellSettings": false,
+    "datadog.staticAnalysis.notification.suppressOnboarding": true,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext"
+    ],
+    "cursorpyright.analysis.autoImportCompletions": true,
+    "cursorpyright.analysis.typeCheckingMode": "strict",
+    "git.openRepositoryInParentFolders": "never",
 }
