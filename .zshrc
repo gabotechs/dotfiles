@@ -68,7 +68,7 @@ fi
 # === vi mode configuration ===
 # =============================
 
-export ZVM_VI_ESCAPE_BINDKEY=jk
+export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 export ZVM_VI_HIGHLIGHT_FOREGROUND=white
 export ZVM_VI_HIGHLIGHT_BACKGROUND=blue
 
