@@ -53,7 +53,7 @@ let mapleader = " "
 :map <C-h>      <Action>(SelectInProjectView)
 :map <leader>tv <Action>(ActivateTerminalToolWindow)
 :map <C-l>      <Action>(ActivateTerminalToolWindow)
-:map <leader>b  <Action>(Switcher)
+:map <leader>b  <Action>(RecentFiles)
 :map <leader>/  <Action>(CommentByLineComment)
 :map <leader>gr <Action>(Vcs.RollbackChangedLines)
 :map gl         <Action>(ShowErrorDescription)
@@ -89,4 +89,3 @@ inoremap Kj <Esc>
 
 :set ic
 
-set NERDTree
