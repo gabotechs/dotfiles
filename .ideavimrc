@@ -80,7 +80,7 @@ let mapleader = " "
 :map <leader>pg <Action>(VcsShowPrevChangeMarker)<Action>(PreviousDiff)
 :map <C-j>      <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)
 :map <C-k>      <Action>(VcsShowPrevChangeMarker)<Action>(PreviousDiff)
-
+:map <leader>q  <Action>(CloseFirstNotification)
 
 inoremap jk <Esc>
 inoremap kj <Esc>
