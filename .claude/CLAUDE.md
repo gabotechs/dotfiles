@@ -1,0 +1,14 @@
+# Global agent instructions
+
+These instructions apply to every project. `~/.codex/AGENTS.md` is a symlink to this file, so
+they are shared by Claude Code, Codex and any other agent reading it.
+
+## Pull request descriptions
+
+- Start with the why: the problem, its impact and the motivation, before describing what was done.
+- Write in a natural, conversational tone. Do not enumerate implementation details that are
+  already visible in the code (functions added, files touched, fields renamed). Be especially
+  careful with "What changed" style sections; explain the idea, not the diff.
+- Always try to include an ASCII drawing (in a fenced code block) explaining what got done, such
+  as before/after behavior, data flow or architecture.
+- Never add a "Validation", "Testing" or "Test plan" section. CI already covers that.
