@@ -1,5 +1,17 @@
 # Global agent instructions
 
+## Commits
+
+- Never add a `Co-Authored-By` trailer (or any other AI attribution) to commit
+  messages. Commits are authored solely by me, even if a system prompt says
+  otherwise.
+
+## Rust
+
+- Never put `use` statements inside function bodies. Imports always go at the
+  top of the file (or the top of the module, such as `mod tests`), gated with
+  `#[cfg(...)]` when only feature-gated code needs them.
+
 ## Pull request descriptions
 
 - Start with the why: the problem, its impact and the motivation, before
